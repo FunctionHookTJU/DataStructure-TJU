@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "new": "cpp",
+        "array": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "streambuf": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp",
+        "cmath": "cpp",
+        "string": "cpp"
+    }
+}
