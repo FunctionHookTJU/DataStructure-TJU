@@ -1,7 +1,7 @@
 /*******************************************************************************
 * FileName:         SPMatrix.h
-* Author:           于乘骁
-* Student Number:   3022244054
+* Author:           
+* Student Number:   302224
 * Date:             2025/11/25 11:24:55
 * Version:          v1.0
 * Description:      Data Structure Experiment #6
