@@ -10,9 +10,20 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-
+struct EdgeNode{
+    int to;
+    int weight;
+    EdgeNode* next;
+};
 class Graph{
 private:
+    int maxV;           // 最大顶点数
+    EdgeNode** adjList; // 邻接表（出边）
+    EdgeNode** inList;  // 入边表（用于计算入度）
+    int* inDegree;      // 入度数组
+    int* outDegree;     // 出度数组
+
+    void appendEdge(EdgeNode*& list, int to, int w);
 
 
 public:
