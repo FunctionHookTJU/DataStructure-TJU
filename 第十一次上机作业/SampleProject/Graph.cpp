@@ -66,7 +66,7 @@ int Graph::prim(){
     bool* vis = new bool[maxV+1];
     int* dist = new int[maxV+1];
     memset(vis , false,sizeof(bool)*(maxV+1));
-    memset(dist , 0x3f,sizeof(int)*(maxV+1));
+    memset(dist , 0x3f3f3f3f,sizeof(int)*(maxV+1));
     dist[1] = 0;
     int totalcost = 0;
     int cnt = 0;
@@ -115,7 +115,7 @@ int Graph::kruskal(){
         EdgeNode* p = adjList[u];
         while(p != nullptr){
             int v = p->to;
-            // 只记录 u < v 的边，避免重复
+            // u从1开始遍历，则总是指向u之后的节点，避免重复。
             if(u < v){
                 edges[edgeCount].from = u;
                 edges[edgeCount].to = v;
