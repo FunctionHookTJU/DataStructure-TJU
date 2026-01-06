@@ -5,7 +5,7 @@ using namespace std;
 
 struct BNode{
     int data;
-    int count;  // è®°å½•ç›¸åŒå…ƒç´ çš„ä¸ªæ•°
+    int count;  // ¼ÇÂ¼ÏàÍ¬ÔªËØµÄ¸öÊı
     BNode *lch,*rch;
 
     BNode(int val) : data(val), count(1), lch(nullptr), rch(nullptr) {}
@@ -40,7 +40,7 @@ Btree(int a[],int sizes){
 
 bool SearchBST(BNode *T, int a, BNode *f, BNode *&p){
     if(T == nullptr){
-        p = f; // not found, p points to parent (å¯èƒ½ä¸º nullptr è¡¨ç¤ºæ ‘ä¸ºç©º)
+        p = f; // not found, p points to parent (¿ÉÄÜÎª nullptr ±íÊ¾Ê÷Îª¿Õ)
         return false;
     }
 
@@ -77,14 +77,14 @@ bool SearchBigger(int a, BNode *&p){
 void inorderTraversal(BNode *T,int *arr,int &index){
     if(T == nullptr) return;
     inorderTraversal(T->lch,arr,index);
-    // æ ¹æ®counté‡å¤è¾“å‡ºè¯¥å…ƒç´ 
+    // ¸ù¾İcountÖØ¸´Êä³ö¸ÃÔªËØ
     for(int i = 0; i < T->count; i++){
         arr[index++] = T->data;
     }
     inorderTraversal(T->rch,arr,index);
 }
 
-// è¿”å›æ’åºåçš„æ•°ç»„
+// ·µ»ØÅÅĞòºóµÄÊı×é
 void Bsort(int *arr){
     if(size == 0) return ;
     
@@ -101,7 +101,7 @@ private:
 void InsertBST(int a){
     BNode *p = nullptr;
     if(!SearchBST(root, a, nullptr, p)){
-        // æ²¡æ‰¾åˆ°ï¼Œæ’å…¥æ–°èŠ‚ç‚¹
+        // Ã»ÕÒµ½£¬²åÈëĞÂ½Úµã
         BNode *newNode = new BNode(a);
         if(p == nullptr){
             // tree was empty
@@ -113,7 +113,7 @@ void InsertBST(int a){
         }
         size++;
     } else {
-        // æ‰¾åˆ°äº†ç›¸åŒå…ƒç´ ï¼Œå¢åŠ è®¡æ•°
+        // ÕÒµ½ÁËÏàÍ¬ÔªËØ£¬Ôö¼Ó¼ÆÊı
         p->count++;
         size++;
     }
@@ -130,11 +130,11 @@ void DeleteBST(BNode * root){
 long long countTriangles(int arr[], int n) {
     if (n < 3) return 0;
     long long ans = 0;
-    for (int k = n - 1; k >= 2; --k) {          // æœ€é•¿è¾¹
+    for (int k = n - 1; k >= 2; --k) {          // ×î³¤±ß
         int i = 0, j = k - 1;
         while (i < j) {
             if (arr[i] + arr[j] > arr[k]) {
-                ans += j - i;   // [i..j-1] éƒ½æ»¡è¶³
+                ans += j - i;   // [i..j-1] ¶¼Âú×ã
                 --j;
             } else {
                 ++i;

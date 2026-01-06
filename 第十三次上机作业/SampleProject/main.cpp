@@ -23,17 +23,17 @@ int main()
     int len = g.getV();
     int *arr = g.dijkstra();
 
-    int r_arr[6] = {0, 10, 11, 12, 5, -1};
+    int r_arr[7] = {0, 0, 10, 11, 12, 5, -1};
     
     if(len == 6){
         cout << "Pass check point 1!" << endl;
     }
 
     int i;
-    for(i = 0; i < len; i++){
+    for(i = 1; i <= len; i++){
         if(arr[i] != r_arr[i]) break;
     }
-    if(i == len) cout << "Pass check point 2!" << endl;
+    if(i == len + 1) cout << "Pass check point 2!" << endl;
     delete arr;
     // 在这里可以释放 dijkstra 分配的数组
     return 0;
