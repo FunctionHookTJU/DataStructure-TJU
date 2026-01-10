@@ -41,4 +41,6 @@ public:
         @return 
     */
     static void heapSort(int* arr, int len);
+
+    static void heapify(int* arr, int idx, int len);
 };

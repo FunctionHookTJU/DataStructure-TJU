@@ -31,16 +31,6 @@ void MySort::quickSortHelper(int* arr, int left,int right){
 }
 
 int MySort::partition(int *arr,int left,int right){
-    /*int base = arr[right];
-    int i = left -1;
-    for(int j =left;j<right;j++){
-        if(arr[j]<=base){
-            i++;
-            EXCHANGE(arr[i],arr[j]);
-        }
-    }
-    EXCHANGE(arr[i+1],arr[right]);
-    return i+1;*/
     int pivot = arr[left];
     while(left<right){
         while(left<right && arr[right]>=pivot) right--;
@@ -57,6 +47,31 @@ void MySort::quickSort(int* arr, int len){
 
 }
 
-void MySort::heapSort(int* arr, int len){
+void MySort::heapify(int* arr, int idx, int len){
+    int largest = idx;
+    int left = 2 * idx + 1; 
+    int right = 2 * idx + 2;
+    
+    if(left < len && arr[left] > arr[largest]){
+        largest = left;
+    }
+    if(right < len && arr[right] > arr[largest]){
+        largest = right;
+    }
+    
+    if(largest != idx){
+        EXCHANGE(arr[idx], arr[largest]);
+        heapify(arr, largest, len);
+    }
+}
 
+void MySort::heapSort(int* arr, int len){
+    for(int i = len / 2 - 1; i >= 0; i--){
+        heapify(arr, i, len);
+    }
+    
+    for(int i = len - 1; i > 0; i--){
+        EXCHANGE(arr[0], arr[i]); 
+        heapify(arr, 0, i); 
+    }
 }
