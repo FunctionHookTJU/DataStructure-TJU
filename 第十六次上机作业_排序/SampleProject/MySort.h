@@ -31,6 +31,8 @@ public:
     */
     static void quickSort(int* arr, int len);
 
+    static void quickSortHelper(int* arr, int left,int right);
+    static int partition(int* arr, int left,int right);
     /**
      *  堆排序，要求对arr进行堆排序，数组长度为len
         @name heapSort(int*, int);
